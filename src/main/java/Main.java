@@ -58,13 +58,13 @@ public class Main {
         rate = getRate(args);
         together = getTogether(args);
         if (!exist(path)) {
-            System.out.println("路径不存在");
+            System.out.println("the directory does't exist");
             System.exit(1);
         }
 
-        System.out.println("压缩工具开始工作");
+        System.out.println("start to work----------------------");
         thumpDir(path, targetPath, together);
-        System.out.println("本次操作一共为您压缩了" + count + "张图片");
+        System.out.println("total " + count + " pictures thump");
     }
 
 
@@ -134,7 +134,7 @@ public class Main {
             return false;
         }
         for (String s : PICTURE_SUFFIX) {
-            if (s.equalsIgnoreCase(target)) {
+            if (target.toLowerCase().endsWith(s)) {
                 return true;
             }
         }
@@ -143,7 +143,7 @@ public class Main {
 
     public static void thumpPicture(String sourcePath, String targetPath) {
         System.out.println("------------------------------------");
-        System.out.println(targetPath + "这样的吗");
+        System.out.println(targetPath + "--------------- success");
         System.out.println("------------------------------------");
         mkdirFile(targetPath);
         try {
